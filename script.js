@@ -49,13 +49,15 @@ let areas = {
     let classeItem = dragItem.classList[1];
   
    if( verificaFrase(areaName, classeItem)) {
-       e.currentTarget.appendChild(dragItem);
-       dragItem.classList.add('item-escolhido');
-   } else {
-    dragItem.classList.remove('item-escolhido');
-   }
+    let clonedItem = dragItem.cloneNode(true);
+    clonedItem.classList.add('cloned');
+    document.querySelector('.neutralArea').appendChild(clonedItem);
+    e.currentTarget.appendChild(dragItem);
+    dragItem.classList.add('item-escolhido');
   }
-   
+   } 
+    dragItem.classList.remove('item-escolhido');
+    e.currentTarget.appendChild(dragItem);
   
   function dragOverNeutral(e) {
     e.preventDefault();
@@ -75,7 +77,7 @@ let areas = {
   function recarregarAPagina(){
     window.location.reload();
   } 
-  
+
   function verificaFrase(area, classeItem) {
     const frasesPermitidas = {
       a:['frase1', 'frase2', 'frase3'],
@@ -95,3 +97,33 @@ let areas = {
       return false;
     }
   }
+  
+  let dog = 0;
+
+  function dragOver(e){
+		e.preventDefault();
+}
+ 
+function drop(e){
+	e.preventDefault();
+	let data = e.dataTransfer.getData("data");
+ 
+	switch(data){
+		case "dog":
+			dog++;
+			document.getElementById('dog_count').innerHTML = dog;
+		break;
+		case "elephant":
+			elephant++;
+			document.getElementById('elephant_count').innerHTML = elephant;
+		break;
+		case "lion":
+			lion++;
+			document.getElementById('lion_count').innerHTML = lion;
+		break;
+	}
+}
+ 
+function drag(e){
+	e.dataTransfer.setData("data", e.target.id);
+}
