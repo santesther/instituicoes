@@ -2,7 +2,6 @@ menu{
     color: #000;
     font: 12px Verdana, sans-serif;
     position: fixed;
-
     }
 #menu-links {
     position: fixed;
@@ -38,8 +37,17 @@ h1{
     
 table, th, td {
     border: 1px solid black;
+    margin-left: 2rem;
 }
     
+.barra {
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    position: fixed;
+    width: 124rem;
+    background-color: #DCEBE6;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -47,7 +55,7 @@ table {
 th, td{
     padding: 10px;
     text-align: left;
-    width: 30rem;
+    width: 25rem;
     height: 2rem;
     font-size: 20px;
     font-weight: bold;
