@@ -6,9 +6,10 @@ let areas = {
   e: null
 };
 
-{
+
 let dog = 0;
 
+{
   function ArrastarSobre(e){
 		e.preventDefault();
 }
@@ -119,4 +120,5 @@ function verificaFrase(area, classeItem) {
   } else {
     return false;
   }
+  
 }
